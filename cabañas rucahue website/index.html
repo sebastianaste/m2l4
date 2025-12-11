@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
     <title>Cabañas Rucahue</title>
     <base href="./" />
     <link
@@ -14,10 +13,10 @@
     />
   </head>
   <body>
-    <div class="container my-1">
-      <div class="bg-info rounded-3 row justify-content-center">
+    <div class="container">
+      <div class="bg-info rounded-3">
         <nav
-          class="navbar navbar-expand-lg navbar-light bg-opacity-25 bg-light col mt-4"
+          class="navbar navbar-expand navbar-light bg-opacity-25 bg-light mt-4"
         >
           <a class="navbar-brand mx-2" href="#"> Cabañas Rucahue</a>
           <div>
@@ -34,10 +33,10 @@
             </ul>
           </div>
         </nav>
-        <div class="container justify-content-around">
+        <div class="container-fluid">
           <section>
             <div class="col-lg-6 my-5">
-              <h1 class="display-5 fw-bold">Cabañas Rucahue</h1>
+              <h1 class="display-5 fw-bold text-danger">Cabañas Rucahue</h1>
               <p class="lead mb-4">
                 Las cabañas más comodas en sector regional de Valdivia, ideal
                 para estudiantes o jovenes profesionales, equipada con todo lo
@@ -53,6 +52,7 @@
               </div>
             </div>
           </section>
+
           <section>
             <!-- seccion (semanticamente dividido) dedicada a describir las cabañas e informacion pertinente-->
             <h2 class="text-danger">Ubicación privilegiada</h2>
@@ -71,27 +71,27 @@
               <li>Agua caliente</li>
               <li>Estacionamiento</li>
             </ul>
-            <h2 class="text-danger">Fotos</h2>
-            <div class="d-block">
-              <img
-                class="img-fluid d-block"
-                id="cabanafront"
-                src="assets/img/cabaña.png"
-                style="width: 400px; height: 300px"
-              />
-              <!--tuve que usar style= con width y height, deb
-              ido a que usando bootstrap no hubiera podido llegar a 400 y 300
-               respectivamente, usando 25% de en width estaba bien, pero 
-               necesitaba 33% para height y no esta disponible en bootstrap como tal sin sass (según investigué)-->
 
-              <button
-                type="button"
-                class="btn btn-dark btn-sm px-2 d-block mx-auto my-2"
-                onclick="alertInfo()"
-              >
-                Más info de la imagen
-              </button>
+            <h2 class="text-danger">Fotos</h2>
+
+            <div class="container">
+              <div class="d-flex justify-content-center">
+                <img
+                  class="img-fluid mx-auto"
+                  src="assets/img/cabaña.png"
+                  style="width: 400px; height: 300px; object-fit: cover"
+                />
+              </div>
+              <!-- forzando el width y height con css, el object fit arregla el fit de la imagen cuando la pagina es menor a las dimensiones de la imagen, por otro lado con bootstrap no se puede especificamente dejar este width y height (solo porcentajes)-->
             </div>
+
+            <button
+              type="button"
+              class="btn btn-dark btn-sm px-2 d-block mx-auto my-2"
+              onclick="alertInfo()"
+            >
+              Más info de la imagen
+            </button>
           </section>
 
           <article>
